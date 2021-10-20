@@ -1,9 +1,7 @@
-#!/bin/bash sh
+#!/bin/bash
 
 str="$1"
 filename=""
-
-echo "$str"
 
 log() {
   echo "> $@"
@@ -24,10 +22,10 @@ if [ -f "$PWD/$str" ]; then
     rm $filename
   fi
 
-  gcc -o "$filename" "$str"
+  gcc "$str" -o "$filename"
 
   if [ -f "$PWD/$filename" ]; then
-    "$PWD"/"$filename"
+    ./"$filename"
   fi
   echo ""
 else
